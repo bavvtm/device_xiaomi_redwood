@@ -119,11 +119,11 @@ TARGET_GRALLOC_HANDLE_HAS_NO_RESERVED_SIZE := true
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@3.0-impl \
-    android.hardware.graphics.allocator@3.0-service
+    android.hardware.graphics.allocator@3.0-service \
+    android.hardware.light-service.xiaomi
 
 PRODUCT_PACKAGES += \
-    disable_configstore \
-    lights.redwood
+    disable_configstore
 
 PRODUCT_ODM_PROPERTIES += \
     persist.sys.sf.color_mode=0 \
