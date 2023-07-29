@@ -184,6 +184,8 @@ BOARD_VENDOR_KERNEL_MODULES := \
     $(KERNEL_MODULES_OUT)/xiaomi_touch.ko \
     $(KERNEL_MODULES_OUT)/xiaomifp.ko
 
+KERNEL_FULL_LLVM := true
+
 # NFC
 TARGET_USES_NQ_NFC := true
 
