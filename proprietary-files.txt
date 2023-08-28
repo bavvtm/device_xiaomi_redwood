@@ -1115,8 +1115,8 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so|444b879c119a74cd
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so|5bd93b3461b37c9ec7b10ae14b83781eb7556b27
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so|cf9e2e22271a4091ba3c4c636ffc55f0d571ca42
 
-# Radio (Data)
-vendor/bin/netmgrd
+# Radio (Data) - from miui_STAR
+vendor/bin/netmgrd|4254e808131fa3a13aec1474bb769dbd539379ff
 
 # Radio (IMS) - from LA.UM.9.14.r1-21000-LAHAINA.QSSI13.0
 -vendor/app/IWlanService/IWlanService.apk|9ea57bfbf58799a564fcf498de9f5fe3506f7342
