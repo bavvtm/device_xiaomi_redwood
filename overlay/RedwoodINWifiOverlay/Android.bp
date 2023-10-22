@@ -1,4 +1,4 @@
 runtime_resource_overlay {
     name: "RedwoodINWifiOverlay",
-    vendor: true
+    product_specific: true,
 }
