@@ -256,6 +256,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.display.dolbyvision.support=true
 
+# Multi-Gen LRU
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.device_config.mglru_native.lru_gen_config=all
+
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
