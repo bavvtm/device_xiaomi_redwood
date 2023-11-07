@@ -24,32 +24,44 @@ import android.hardware.display.DisplayManager;
 import android.os.IBinder;
 import android.view.Display;
 import android.view.Display.HdrCapabilities;
+import android.util.Log;
 
 import org.lineageos.settings.dirac.DiracUtils;
 import org.lineageos.settings.doze.PocketService;
 import org.lineageos.settings.thermal.ThermalUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
+    private static final String TAG = "Xiaomi Parts";
 
     @Override
     public void onReceive(final Context context, Intent intent) {
-        if (!intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
-            return;
+        Log.d(TAG, "Received intent: " + intent.getAction());
+        
+        switch (intent.getAction()) {
+            case Intent.ACTION_LOCKED_BOOT_COMPLETED:
+                onLockedBootCompleted(context);
+                break;
+            case Intent.ACTION_BOOT_COMPLETED:
+                onBootCompleted(context);
+                break;
         }
+    }
 
-        // Dirac
-        DiracUtils.onBootCompleted(context);
-
-        // Thermal Profiles
-        ThermalUtils.startService(context);
-
-        // Pocket
+    private static void onLockedBootCompleted(Context context) {
+        // Data is not accessible (user has just locked).
         PocketService.startService(context);
 
-        // Override HDR types
+        // Override HDR types to enable Dolby Vision
         final DisplayManager dm = context.getSystemService(DisplayManager.class);
         dm.overrideHdrTypes(Display.DEFAULT_DISPLAY, new int[]{
                 HdrCapabilities.HDR_TYPE_DOLBY_VISION, HdrCapabilities.HDR_TYPE_HDR10,
                 HdrCapabilities.HDR_TYPE_HLG, HdrCapabilities.HDR_TYPE_HDR10_PLUS});
     }
+
+    private static void onBootCompleted(Context context) {
+        // Data is now accessible (user has just unlocked).
+        DiracUtils.onBootCompleted(context);
+        ThermalUtils.startService(context);
+    }
+
 }
