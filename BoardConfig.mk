@@ -188,7 +188,7 @@ BOARD_VENDOR_KERNEL_MODULES := \
 TARGET_USES_NQ_NFC := true
 
 # OTA assert
-TARGET_OTA_ASSERT_DEVICE := redwood,redwoodin,redwood_global
+TARGET_OTA_ASSERT_DEVICE := redwood|redwoodin|redwood_global
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
