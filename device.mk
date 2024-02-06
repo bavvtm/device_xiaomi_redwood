@@ -83,8 +83,12 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
+PRODUCT_PACKAGES += \
+    libMegviiFacepp-0.5.2 \
+    libmegface
+
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/camera/st_license.lic:$(TARGET_COPY_OUT_VENDOR)/etc/camera/st_license.lic
+    $(LOCAL_PATH)/configs/camera_cnf.txt:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_cnf.txt
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -94,11 +98,14 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.miui.notch=1 \
-    ro.product.mod_device=lisa_global
+    ro.product.mod_device=redwood_global
 
 PRODUCT_VENDOR_PROPERTIES += \
     camera.disable_zsl_mode=1 \
     ro.hardware.camera=xiaomi
+
+# Characteristics
+PRODUCT_CHARACTERISTICS := nosdcard
 
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
@@ -112,7 +119,7 @@ TARGET_GRALLOC_HANDLE_HAS_NO_RESERVED_SIZE := true
 
 PRODUCT_PACKAGES += \
     disable_configstore \
-    lights.lisa
+    lights.redwood
 
 PRODUCT_ODM_PROPERTIES += \
     persist.sys.sf.color_mode=0 \
@@ -164,17 +171,13 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service
+    android.hardware.biometrics.fingerprint@2.3-service.xiaomi
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.hardware.fingerprint=fpc \
-    persist.vendor.sys.fp.vendor=fpc
-
 # Firmware
-$(call inherit-product-if-exists, vendor/xiaomi/firmware/lisa/config.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/firmware/redwood/config.mk)
 
 # FRP
 PRODUCT_VENDOR_PROPERTIES += \
@@ -201,11 +204,11 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Init scripts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.usb.rc \
-    $(LOCAL_PATH)/rootdir/etc/init.lisa.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.lisa.rc \
-    $(LOCAL_PATH)/rootdir/etc/init.lisa.perf.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.lisa.perf.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.redwood.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.redwood.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.redwood.perf.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.redwood.perf.rc \
     $(LOCAL_PATH)/rootdir/etc/init.recovery.qcom.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.qcom.rc \
     $(LOCAL_PATH)/rootdir/etc/init.target.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.target.rc \
-    $(LOCAL_PATH)/rootdir/etc/ueventd.lisa.rc:$(TARGET_COPY_OUT_ODM)/etc/ueventd.rc
+    $(LOCAL_PATH)/rootdir/etc/ueventd.redwood.rc:$(TARGET_COPY_OUT_ODM)/etc/ueventd.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/bin/init.mi.usb.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.mi.usb.sh \
@@ -222,7 +225,7 @@ PRODUCT_COPY_FILES += \
 
 # Kernel
 KERNEL_MODULES_INSTALL := dlkm
-KERNEL_MODULES_OUT := $(OUT_DIR)/target/product/lisa/$(KERNEL_MODULES_INSTALL)/lib/modules
+KERNEL_MODULES_OUT := $(OUT_DIR)/target/product/redwood/$(KERNEL_MODULES_INSTALL)/lib/modules
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -241,12 +244,17 @@ PRODUCT_COPY_FILES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    libcodec2_soft_common.vendor \
-    libsfplugin_ccodec_utils.vendor
+    libavservices_minijail_vendor \
+    libcodec2_hidl@1.0.vendor \
+    libcodec2_vndk.vendor
+
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.display.dolbyvision.support=true
 
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/xiaomi
 
 # Neural networks
 PRODUCT_PACKAGES += \
@@ -254,20 +262,20 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    AOSPALisaFrameworksOverlay \
-    AOSPALisaSystemUIOverlay \
-    LisaCNSettingsProviderOverlay \
-    LisaCNWifiOverlay \
-    LisaCarrierConfigOverlay \
-    LisaFrameworksOverlay \
-    LisaGLSettingsProviderOverlay \
-    LisaGLWifiOverlay \
-    LisaINSettingsProviderOverlay \
-    LisaINWifiOverlay \
-    LisaNfcOverlay \
-    LisaSettingsOverlay \
-    LisaSystemUIOverlay \
-    LisaWifiOverlay \
+    AOSPARedwoodFrameworksOverlay \
+    AOSPARedwoodSystemUIOverlay \
+    RedwoodCarrierConfigOverlay \
+    RedwoodCNSettingsProviderOverlay \
+    RedwoodCNWifiOverlay \
+    RedwoodFrameworksOverlay \
+    RedwoodGLSettingsProviderOverlay \
+    RedwoodGLWifiOverlay \
+    RedwoodINSettingsProviderOverlay \
+    RedwoodINWifiOverlay \
+    RedwoodNfcOverlay \
+    RedwoodSettingsOverlay \
+    RedwoodSystemUIOverlay \
+    RedwoodWifiOverlay \
     NoCutoutOverlay
 
 # Partitions
@@ -331,7 +339,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.sensors.sync_request=true
 
 # Shipping API
-PRODUCT_SHIPPING_API_LEVEL := 30
+PRODUCT_SHIPPING_API_LEVEL := 31
 
 # Thermal
 PRODUCT_VENDOR_PROPERTIES += \
@@ -344,7 +352,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 endif
 
 # Vendor blobs
-$(call inherit-product, vendor/xiaomi/lisa/lisa-vendor.mk)
+$(call inherit-product, vendor/xiaomi/redwood/redwood-vendor.mk)
 
 # Verified Boot
 PRODUCT_COPY_FILES += \
