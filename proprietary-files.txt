@@ -1,4 +1,4 @@
-# Device proprietary files - from lisa MIUI V14.0.4.0.TKOMIXM package, unless pinned
+# Device proprietary files - from redwood_global MIUI V14.0.7.0.TMSMIXM package, unless pinned
 
 # ADSP
 vendor/bin/adsprpcd
