@@ -16,3 +16,14 @@ genfscon sysfs /devices/virtual/touch/touch_dev/ear_sensor_data                 
 genfscon sysfs /devices/platform/goodix_ts.0/wakeup                                 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/990000.i2c/i2c-2/2-005a/wakeup                 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/a84000.i2c/i2c-3/3-0028/wakeup                 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a84000.i2c/i2c-3/3-005a/wakeup                 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pmk8350@0:pon_pbs@800/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:fingerprint_goodix/wakeup                  u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,msm-audio-apr/soc:qcom,msm-audio-apr:qcom,q6core-audio/soc:qcom,msm-audio-apr:qcom,q6core-audio:sound/Listen u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys5/wakeup/wakeup29     u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/3700000.qcom,lpass/subsys1/wakeup/wakeup19     u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/990000.i2c/i2c-2/2-0028/wakeup/wakeup37        u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/990000.i2c/i2c-2/2-0028/wakeup/wakeup42        u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a300000.qcom,turing/subsys4/wakeup/wakeup25    u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys8/wakeup23              u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,wpss@8a00000/subsys2/wakeup/wakeup21  u:object_r:sysfs_wakeup:s0
