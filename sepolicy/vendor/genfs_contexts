@@ -24,6 +24,8 @@ genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys5/wakeup/wakeup29 
 genfscon sysfs /devices/platform/soc/3700000.qcom,lpass/subsys1/wakeup/wakeup19     u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/990000.i2c/i2c-2/2-0028/wakeup/wakeup37        u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/990000.i2c/i2c-2/2-0028/wakeup/wakeup42        u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/990000.i2c/i2c-2/2-0028/wakeup/wakeup44        u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/990000.i2c/i2c-2/2-0028/wakeup/wakeup58        u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/a300000.qcom,turing/subsys4/wakeup/wakeup25    u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys8/wakeup23              u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,wpss@8a00000/subsys2/wakeup/wakeup21  u:object_r:sysfs_wakeup:s0
