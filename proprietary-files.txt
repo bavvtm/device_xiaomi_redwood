@@ -1312,12 +1312,6 @@ vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # Vibrator firmware
 vendor/firmware/aw8697_haptic.bin
-vendor/firmware/0_click_P_RTP.bin
-vendor/firmware/1_doubelClick_P_RTP.bin
-vendor/firmware/2_tick_P_RTP.bin
-vendor/firmware/3_thud_P_RTP.bin
-vendor/firmware/4_pop_P_RTP.bin
-vendor/firmware/5_heavyClick_P_RTP.bin
 
 # VPU firmware
 vendor/firmware/vpu20_1v.b00
