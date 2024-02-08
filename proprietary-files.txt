@@ -286,6 +286,9 @@ vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
 vendor/lib64/vendor.xiaomi.hardware.campostproc@1.0-service-impl.so
 vendor/lib64/vendor.xiaomi.hardware.campostproc@1.0.so
 
+# Camera - from miui_LISAGlobal_V14.0.7.0.TKOMIXM
+vendor/lib64/libwa_opticalzoomfactor.so|81bbe8c568871d097e85a6d4a591e69f9d24731b
+
 # Camera components
 vendor/lib64/camera/components/com.mi.node.aiasd.so
 vendor/lib64/camera/components/com.mi.node.beautyLens.so
