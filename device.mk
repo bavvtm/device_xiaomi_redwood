@@ -118,6 +118,10 @@ PRODUCT_PACKAGES += \
 TARGET_GRALLOC_HANDLE_HAS_NO_RESERVED_SIZE := true
 
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@3.0-impl \
+    android.hardware.graphics.allocator@3.0-service
+
+PRODUCT_PACKAGES += \
     disable_configstore \
     lights.redwood
 
