@@ -37,6 +37,10 @@ on boot
     chown system graphics /sys/bus/platform/devices/soc:xiaomi_fingerprint/fingerdown
     chmod 0664 /sys/bus/platform/devices/soc:xiaomi_fingerprint/fingerdown
 
+    # Lineage Health
+    chown system system /sys/class/power_supply/battery/input_suspend
+    chmod 0660 /sys/class/power_supply/battery/input_suspend
+
 on post-fs
     # Create persist for camera calibration data
     mkdir /mnt/vendor/persist/camera 0755 system cameraserver
