@@ -147,6 +147,10 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.xiaomi.bl.poll=true \
     vendor.display.qdcm.mode_combine=2
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/displayconfig/display_id_4630946480857061762.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946480857061762.xml \
+    $(LOCAL_PATH)/configs/displayconfig/display_id_4630946622257352578.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946622257352578.xml
+
 # Doze
 PRODUCT_PACKAGES += \
     ParanoidDoze
