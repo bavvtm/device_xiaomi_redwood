@@ -1,1 +1,2 @@
 type hal_xiaomi_camera_hwservice, hwservice_manager_type;
+type hal_fingerprint_xiaomi_hwservice, hwservice_manager_type;
